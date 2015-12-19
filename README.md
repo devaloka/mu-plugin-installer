@@ -86,7 +86,7 @@ The root package means your project's `package.json`.
 `installer-loader-paths` key is available for your custom install path for
 loader(s).
 
-This is almost the same as as [A Multi-Framework Composer Library Installer](https://github.com/composer/installers)'s.`installer-paths`
+This is almost the same as as [A Multi-Framework Composer Library Installer](https://github.com/composer/installers)'s `installer-paths`
 but it is for the loader file.
 
 ```json
