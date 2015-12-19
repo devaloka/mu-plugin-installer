@@ -36,7 +36,7 @@ class MuPluginInstaller extends LibraryInstaller
      */
     public function supports($packageType)
     {
-        return ($packageType === 'devaloka-muplugin');
+        return ($packageType === static::TYPE);
     }
 
     /**
