@@ -75,11 +75,11 @@ relative path from your package root.
 In addition, `{$loader}` variable is available, which is the relative path
 to the loader file.
 
-You can check out a real world [package.json](https://github.com/devaloka/devaloka/blob/master/package.json) example.
+You can check out a real world [composer.json](https://github.com/devaloka/devaloka/blob/master/composer.json) example.
 
 ## Example `composer.json` File (for root package)
 
-The root package means your project's `package.json`.
+The root package means your project's `composer.json`.
 
 ### Custom Loader Path (`installer-loader-paths`)
 
