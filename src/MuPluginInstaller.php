@@ -235,11 +235,8 @@ class MuPluginInstaller extends LibraryInstaller
      */
     protected function removeLoader(PackageInterface $package)
     {
-        echo "removing loader";
         $config = $this->getInstallerConfig($package);
         $target = $this->getLoaderInstallPath($package) . basename($config['loader']);
-
-        echo $target;
 
         if (!$this->filesystem->remove($target)) {
             throw new \RuntimeException('Could not completely delete ' . $target . ', aborting.');
