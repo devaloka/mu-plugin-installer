@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace Devaloka\Composer;
+namespace Devaloka\Composer\Installer;
 
 use Composer\Composer;
 use Composer\IO\IOInterface;

@@ -8,7 +8,7 @@
  * @license MIT
  */
 
-namespace Devaloka\Composer;
+namespace Devaloka\Composer\Installer;
 
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
