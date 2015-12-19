@@ -5,3 +5,8 @@
 ### Bug Fixes
 
 * incorrect install check ([d20bc66](https://github.com/devaloka/mu-plugin-installer/commit/d20bc66))
+
+
+
+<a name="0.1.0"></a>
+# 0.1.0 (2015-12-19)
