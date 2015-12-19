@@ -48,28 +48,28 @@ will be installed as:
 
 ### Package Type and Dependency (`type` and `require`)
 
-    ```json
-    {
-        "name": "you/your-plugin-name",
-        "type": "devaloka-muplugin",
-        "require": {
-            "devaloka/mu-plugin-installer": "~0.1.0"
-        }
+```json
+{
+    "name": "you/your-plugin-name",
+    "type": "devaloka-muplugin",
+    "require": {
+        "devaloka/mu-plugin-installer": "~0.1.0"
     }
-    ```
+}
+```
 
 ### Custom Loader File (`installer-loader`)
 
 `installer-loader` key is available for your custom loader file, which is the
 relative path from your package root.
 
-    ```json
-    {
-        "extra": {
-            "installer-loader": "loader/your-loader.php"
-        }
+```json
+{
+    "extra": {
+        "installer-loader": "loader/your-loader.php"
     }
-    ```
+}
+```
 
 `{$vendor}`, `{$name}` and `{$type}` variables are available.
 In addition, `{$loader}` variable is available, which is the relative path
@@ -89,26 +89,26 @@ loader(s).
 This is almost the same as as [A Multi-Framework Composer Library Installer](https://github.com/composer/installers)'s.`installer-paths`
 but it is for the loader file.
 
-    ```json
-    {
-        "extra": {
-            "installer-loader-paths": {
-                "your-custom-path/{$name}/": ["vendor/package"]
-            }
+```json
+{
+    "extra": {
+        "installer-loader-paths": {
+            "your-custom-path/{$name}/": ["vendor/package"]
         }
     }
-    ```
+}
+```
 
 With a `type:` prefix:
 
-    ```json
-    {
-        "extra": {
-            "installer-loader-paths": {
-                "your-custom-path/{$name}/": ["type:devaloka-muplugin"]
-            }
+```json
+{
+    "extra": {
+        "installer-loader-paths": {
+            "your-custom-path/{$name}/": ["type:devaloka-muplugin"]
         }
     }
-    ```
+}
+```
 
 `{$vendor}`, `{$name}`, `{$type}` and `{$loader}` are available.
