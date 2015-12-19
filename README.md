@@ -29,19 +29,17 @@ A package:
 
 will be installed as:
 
-*   wp-content/
+*   wp-content/mu-plugins/
 
-    *   mu-plugins/
+    *   your-plugin.php (loader script)
 
-        *   your-plugin.php (loader script)
+    *   *your-plugin*/ (same as your package name by default)
 
-        *   *your-plugin*/ (same as your package name by default)
+        *   foo/
 
-            *   foo/
+            *   bar.php
 
-                *   bar.php
-
-            *   baz.php
+        *   baz.php
 
 ## Example `composer.json` File (for MU plugin package)
 
