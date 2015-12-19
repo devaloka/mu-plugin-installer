@@ -31,7 +31,7 @@ will be installed as:
 
 *   wp-content/mu-plugins/
 
-    *   your-plugin.php (loader script)
+    *   your-plugin.php (**loader script**)
 
     *   *your-plugin*/ (same as your package name by default)
 
