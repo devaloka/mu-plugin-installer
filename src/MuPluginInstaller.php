@@ -54,7 +54,10 @@ class MuPluginInstaller extends LibraryInstaller
      */
     public function isInstalled(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        return (parent::isInstalled($repo, $package) || is_readable($this->getLoaderInstallPath($package)));
+        $config = $this->getInstallerConfig($package);
+        $loader = $this->getLoaderInstallPath($package) . basename($config['loader']);
+
+        return (parent::isInstalled($repo, $package) || is_readable($loader));
     }
 
     /**
