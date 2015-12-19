@@ -1,7 +1,7 @@
 {
     "name"             : "devaloka/mu-plugin-installer",
     "description"      : "A Composer Installer for WordPress MU plugins",
-    "version"          : "0.1.0",
+    "version"          : "0.1.1",
     "type"             : "composer-plugin",
     "keywords"         : [
         "wordpress",
