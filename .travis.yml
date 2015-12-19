@@ -10,19 +10,31 @@ php:
   - '7.0'
   - hhvm
 
+matrix:
+  fast_finish: true
+  allow_failures:
+    - php: hhvm
+
 cache:
   directories:
     - node_modules
+    - $HOME/.composer/cache/files
 
 before_install:
   - npm config set spin false
   - npm install -g npm
+  - composer self-update
 
 install:
   - npm install
+  - composer install --prefer-source
 
 script:
   - npm run-script lint-travis
+  - phpunit --colors --verbose --coverage-clover build/logs/clover.xml
+
+after_script:
+  - vendor/bin/coveralls --verbose
 
 notifications:
   email:
