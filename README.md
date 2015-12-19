@@ -35,6 +35,10 @@ will be installed as:
 
     *   *your-plugin*/ (same as your package name by default)
 
+        *   mu-plugins/ (original loader directory remains)
+
+            *   your-plugin.php (original loader script remains)
+
         *   foo/
 
             *   bar.php
