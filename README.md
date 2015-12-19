@@ -5,7 +5,7 @@
 This is a Composer Installer for WordPress MU Plugins.
 
 The Installer is basically based on/compatible with [A Multi-Framework Composer Library Installer](https://github.com/composer/installers)
-but it also supports the loader script installation of your MU plugin.
+but it also **supports the loader script installation** of your MU plugin.
 
 The loader script is installed into `mu-plugins` directory by default so that
 you can provide your MU plugin including sub directory as a Composer package.
