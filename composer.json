@@ -1,0 +1,57 @@
+{
+    "name"             : "devaloka/mu-plugin-installer",
+    "description"      : "A Composer Installer for WordPress MU plugins",
+    "version"          : "0.1.0",
+    "type"             : "composer-plugin",
+    "keywords"         : [
+        "wordpress",
+        "plugin",
+        "mu-plugin",
+        "composer",
+        "installer"
+    ],
+    "homepage"         : "https://github.com/devaloka/mu-plugin-installer",
+    "license"          : [
+        "MIT"
+    ],
+    "minimum-stability": "stable",
+    "authors"          : [
+        {
+            "name"    : "Whizark",
+            "email"   : "devaloka@whizark.com",
+            "homepage": "http://whizark.com",
+            "role"    : "Developer"
+        }
+    ],
+    "support"          : {
+        "email" : "devaloka@whizark.com",
+        "issues": "https://github.com/devaloka/mu-plugin-installer/isssues",
+        "wiki"  : "https://github.com/devaloka/mu-plugin-installer/wiki",
+        "source": "https://github.com/devaloka/mu-plugin-installer"
+    },
+    "require"          : {
+        "php"                : ">=5.3.2",
+        "composer-plugin-api": "~1.0.0"
+    },
+    "require-dev"      : {
+        "composer/composer": "1.0.*@dev"
+    },
+    "autoload"         : {
+        "psr-4": {
+            "Devaloka\\Composer\\": "src/"
+        }
+    },
+    "archive"          : {
+        "exclude": [
+            ".gitignore",
+            ".gitattributes",
+            ".mailmap",
+            ".editorconfig",
+            "npm-shrinkwrap.json",
+            ".mdastrc"
+        ]
+    },
+    "extra"            : {
+        "class": "Devaloka\\Composer\\MuPluginInstallerPlugin"
+    }
+}
