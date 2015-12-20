@@ -42,16 +42,6 @@ class MuPluginInstaller extends LibraryInstaller
     /**
      * {@inheritDoc}
      */
-    protected function installCode(PackageInterface $package)
-    {
-        parent::installCode($package);
-
-        $this->installLoader($package);
-    }
-
-    /**
-     * {@inheritDoc}
-     */
     public function isInstalled(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
         $config = $this->getInstallerConfig($package);
@@ -61,17 +51,63 @@ class MuPluginInstaller extends LibraryInstaller
     }
 
     /**
-     * Installs the loader script of an MU plugin.
+     * {@inheritDoc}
+     */
+    public function getInstallPath(PackageInterface $package)
+    {
+        $config      = $this->getInstallerConfig($package);
+        $installPath = 'wp-content/mu-plugins/{$name}/';
+
+        if (!$this->composer->getPackage()) {
+            return $this->parseTemplate($installPath, $config);
+        }
+
+        $extra = $this->composer->getPackage()->getExtra();
+
+        if (!empty($extra['installer-paths'])) {
+            $customPath = $this->resolveInstallPath(
+                $extra['installer-paths'],
+                implode('/', array($config['vendor'], $config['name']))
+            );
+
+            if ($customPath !== false) {
+                $installPath = $customPath;
+            }
+        }
+
+        return $this->parseTemplate($installPath, $config);
+    }
+
+    /**
+     * Gets the install path for the loader script of an MU plugin.
      *
      * @param PackageInterface $package An instance of PackageInterface.
+     *
+     * @return string|bool The install path, or `false` if the path cannot be resolved.
      */
-    protected function installLoader(PackageInterface $package)
+    public function getLoaderInstallPath(PackageInterface $package)
     {
-        $config = $this->getInstallerConfig($package);
-        $source = $this->getInstallPath($package) . $config['loader'];
-        $target = $this->getLoaderInstallPath($package) . basename($config['loader']);
+        $config      = $this->getInstallerConfig($package);
+        $installPath = 'wp-content/mu-plugins/';
 
-        copy($source, $target);
+        if (!$this->composer->getPackage()) {
+            return $this->parseTemplate($installPath, $config);
+        }
+
+        $extra = $this->composer->getPackage()->getExtra();
+
+        if (!empty($extra['installer-loader-paths'])) {
+            $customPath = $this->resolveInstallPath(
+                $extra['installer-loader-paths'],
+                implode('/', array($config['vendor'], $config['name']))
+            );
+
+            if ($customPath !== false) {
+                $installPath = $customPath;
+            }
+        }
+
+        return $this->parseTemplate($installPath, $config);
     }
 
     /**
@@ -110,34 +146,6 @@ class MuPluginInstaller extends LibraryInstaller
         }
 
         return compact('name', 'vendor', 'type', 'loader');
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    public function getInstallPath(PackageInterface $package)
-    {
-        $config      = $this->getInstallerConfig($package);
-        $installPath = 'wp-content/mu-plugins/{$name}/';
-
-        if (!$this->composer->getPackage()) {
-            return $this->parseTemplate($installPath, $config);
-        }
-
-        $extra = $this->composer->getPackage()->getExtra();
-
-        if (!empty($extra['installer-paths'])) {
-            $customPath = $this->resolveInstallPath(
-                $extra['installer-paths'],
-                implode('/', array($config['vendor'], $config['name']))
-            );
-
-            if ($customPath !== false) {
-                $installPath = $customPath;
-            }
-        }
-
-        return $this->parseTemplate($installPath, $config);
     }
 
     /**
@@ -187,35 +195,27 @@ class MuPluginInstaller extends LibraryInstaller
     }
 
     /**
-     * Gets the install path for the loader script of an MU plugin.
+     * {@inheritDoc}
+     */
+    protected function installCode(PackageInterface $package)
+    {
+        parent::installCode($package);
+
+        $this->installLoader($package);
+    }
+
+    /**
+     * Installs the loader script of an MU plugin.
      *
      * @param PackageInterface $package An instance of PackageInterface.
-     *
-     * @return string|bool The install path, or `false` if the path cannot be resolved.
      */
-    public function getLoaderInstallPath(PackageInterface $package)
+    protected function installLoader(PackageInterface $package)
     {
-        $config      = $this->getInstallerConfig($package);
-        $installPath = 'wp-content/mu-plugins/';
+        $config = $this->getInstallerConfig($package);
+        $source = $this->getInstallPath($package) . $config['loader'];
+        $target = $this->getLoaderInstallPath($package) . basename($config['loader']);
 
-        if (!$this->composer->getPackage()) {
-            return $this->parseTemplate($installPath, $config);
-        }
-
-        $extra = $this->composer->getPackage()->getExtra();
-
-        if (!empty($extra['installer-loader-paths'])) {
-            $customPath = $this->resolveInstallPath(
-                $extra['installer-loader-paths'],
-                implode('/', array($config['vendor'], $config['name']))
-            );
-
-            if ($customPath !== false) {
-                $installPath = $customPath;
-            }
-        }
-
-        return $this->parseTemplate($installPath, $config);
+        copy($source, $target);
     }
 
     /**
