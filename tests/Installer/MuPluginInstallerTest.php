@@ -560,7 +560,7 @@ class MuPluginInstallerTest extends InstallerTestCase
      */
     protected function createMuPluginPackage($name)
     {
-        $package = new Package($name, '1.0.0.0', '1.0.0');
+        $package = new Package($name, '1.0.0', '1.0.0');
 
         $package->setType(MuPluginInstaller::TYPE);
 
