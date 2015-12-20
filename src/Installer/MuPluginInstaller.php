@@ -61,13 +61,12 @@ class MuPluginInstaller extends LibraryInstaller
             return $this->parseTemplate($installPath, $config);
         }
 
-        $extra = $this->composer->getPackage()->getExtra();
+        $extra      = $this->composer->getPackage()->getExtra();
+        $prettyName = !empty($config['vendor']) ? ($config['vendor'] . '/') : '';
+        $prettyName = $prettyName . $config['name'];
 
         if (!empty($extra['installer-paths'])) {
-            $customPath = $this->resolveInstallPath(
-                $extra['installer-paths'],
-                implode('/', array($config['vendor'], $config['name']))
-            );
+            $customPath = $this->resolveInstallPath($extra['installer-paths'], $prettyName);
 
             if ($customPath !== false) {
                 $installPath = $customPath;
@@ -93,13 +92,12 @@ class MuPluginInstaller extends LibraryInstaller
             return $this->parseTemplate($installPath, $config);
         }
 
-        $extra = $this->composer->getPackage()->getExtra();
+        $extra      = $this->composer->getPackage()->getExtra();
+        $prettyName = !empty($config['vendor']) ? ($config['vendor'] . '/') : '';
+        $prettyName = $prettyName . $config['name'];
 
         if (!empty($extra['installer-loader-paths'])) {
-            $customPath = $this->resolveInstallPath(
-                $extra['installer-loader-paths'],
-                implode('/', array($config['vendor'], $config['name']))
-            );
+            $customPath = $this->resolveInstallPath($extra['installer-loader-paths'], $prettyName);
 
             if ($customPath !== false) {
                 $installPath = $customPath;
