@@ -96,5 +96,7 @@ abstract class InstallerTestCase extends PHPUnit_Framework_TestCase
     {
         $this->filesystem->removeDirectory($this->vendorDir);
         $this->filesystem->removeDirectory($this->binDir);
+
+        Mockery::close();
     }
 }
