@@ -7,12 +7,12 @@ use Devaloka\Composer\Installer\MuPluginInstaller;
 use Mockery;
 
 /**
- * Class InstallerTest
+ * Class MuPluginInstallerTest
  *
  * @package Tests\Devaloka\Composer\Installer
  * @author Whizark
  */
-class InstallerInstallerTest extends InstallerTestCase
+class MuPluginInstallerTest extends InstallerTestCase
 {
     public function testPackageTypeShouldBeDevalokaMuplugin()
     {
