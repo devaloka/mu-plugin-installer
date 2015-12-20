@@ -56,7 +56,11 @@
             ".mailmap",
             ".editorconfig",
             "npm-shrinkwrap.json",
-            ".mdastrc"
+            ".mdastrc",
+            "phpunit.xml.dist",
+            ".coveralls.yml",
+            "tests/",
+            ".travis.yml"
         ]
     },
     "extra"            : {
