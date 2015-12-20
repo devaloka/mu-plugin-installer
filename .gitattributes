@@ -4,8 +4,10 @@
 .gitignore export-ignore
 .mailmap export-ignore
 .editorconfig export-ignore
+package.json export-ignore
 npm-shrinkwrap.json export-ignore
 .mdastrc export-ignore
+composer.json export-ignore
 phpunit.xml.dist export-ignore
 .coveralls.yml export-ignore
 tests/ export-ignore
