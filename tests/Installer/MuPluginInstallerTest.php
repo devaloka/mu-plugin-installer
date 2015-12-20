@@ -536,7 +536,7 @@ class MuPluginInstallerTest extends InstallerTestCase
 
         $installPath = $installer->getLoaderInstallPath($package);
 
-        $this->assertEquals($expectedPath, $installPath);
+        $this->assertSame($expectedPath, $installPath);
     }
 
     /**
