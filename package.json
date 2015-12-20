@@ -1,6 +1,6 @@
 {
     "name"           : "mu-plugin-installer",
-    "version"        : "0.1.1",
+    "version"        : "0.1.2",
     "description"    : "A Composer Installer for WordPress MU plugins",
     "keywords"       : [
         "wordpress",
