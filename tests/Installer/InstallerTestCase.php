@@ -71,8 +71,8 @@ abstract class InstallerTestCase extends PHPUnit_Framework_TestCase
         $this->repository      = Mockery::mock('Composer\Repository\InstalledRepositoryInterface');
         $this->io              = Mockery::mock('Composer\IO\IOInterface');
 
-        $this->vendorDir = realpath(sys_get_temp_dir()) . DIRECTORY_SEPARATOR . 'baton-test-vendor';
-        $this->binDir    = realpath(sys_get_temp_dir()) . DIRECTORY_SEPARATOR . 'baton-test-bin';
+        $this->vendorDir = realpath(sys_get_temp_dir()) . DIRECTORY_SEPARATOR . 'installer-tests-vendor';
+        $this->binDir    = realpath(sys_get_temp_dir()) . DIRECTORY_SEPARATOR . 'installer-tests-bin';
 
         $this->config->merge(
             array(
