@@ -52,6 +52,6 @@
         ]
     },
     "extra"            : {
-        "class": "Devaloka\\Composer\\MuPluginInstallerPlugin"
+        "class": "Devaloka\\Composer\\Installer\\MuPluginInstallerPlugin"
     }
 }
