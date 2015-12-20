@@ -44,8 +44,7 @@ class MuPluginInstaller extends LibraryInstaller
      */
     public function isInstalled(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        $config = $this->getInstallerConfig($package);
-        $loader = $this->getLoaderInstallPath($package) . basename($config['loader']);
+        $loader = $this->getLoaderFileInstallPath($package);
 
         return (parent::isInstalled($repo, $package) || is_readable($loader));
     }
@@ -108,6 +107,48 @@ class MuPluginInstaller extends LibraryInstaller
         }
 
         return $this->parseTemplate($installPath, $config);
+    }
+
+    /**
+     * Gets the file path where a loader script is located.
+     *
+     * @param PackageInterface $package An instance of PackageInterface.
+     *
+     * @return string The file path, or `false` if the path cannot be resolved.
+     */
+    public function getLoaderFilePackagePath(PackageInterface $package)
+    {
+        $installPath = $this->getInstallPath($package);
+
+        if ($installPath === false) {
+            return false;
+        }
+
+        $config      = $this->getInstallerConfig($package);
+        $packagePath = $installPath . $config['loader'];
+
+        return $packagePath;
+    }
+
+    /**
+     * Gets the file path where a loader script is installed.
+     *
+     * @param PackageInterface $package An instance of PackageInterface.
+     *
+     * @return string The file path, or `false` if the path cannot be resolved.
+     */
+    public function getLoaderFileInstallPath(PackageInterface $package)
+    {
+        $installPath = $this->getLoaderInstallPath($package);
+
+        if ($installPath === false) {
+            return false;
+        }
+
+        $config      = $this->getInstallerConfig($package);
+        $installPath = $installPath . basename($config['loader']);
+
+        return $installPath;
     }
 
     /**
@@ -211,9 +252,8 @@ class MuPluginInstaller extends LibraryInstaller
      */
     protected function installLoader(PackageInterface $package)
     {
-        $config = $this->getInstallerConfig($package);
-        $source = $this->getInstallPath($package) . $config['loader'];
-        $target = $this->getLoaderInstallPath($package) . basename($config['loader']);
+        $source = $this->getLoaderFilePackagePath($package);
+        $target = $this->getLoaderFileInstallPath($package);
 
         copy($source, $target);
     }
@@ -235,8 +275,7 @@ class MuPluginInstaller extends LibraryInstaller
      */
     protected function removeLoader(PackageInterface $package)
     {
-        $config = $this->getInstallerConfig($package);
-        $target = $this->getLoaderInstallPath($package) . basename($config['loader']);
+        $target = $this->getLoaderFileInstallPath($package);
 
         if (!$this->filesystem->remove($target)) {
             throw new \RuntimeException('Could not completely delete ' . $target . ', aborting.');
