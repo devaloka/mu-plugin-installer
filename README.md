@@ -74,11 +74,6 @@ relative path from your package root.
 }
 ```
 
-`{$vendor}`, `{$name}` and `{$type}` variables are available.
-
-In addition, `{$loader}` variable is available, which is the relative path
-to the loader file.
-
 You can check out a real world [composer.json](https://github.com/devaloka/devaloka/blob/master/composer.json) example.
 
 ## Example `composer.json` File (for root package)
@@ -115,4 +110,7 @@ With a `type:` prefix:
 }
 ```
 
-`{$vendor}`, `{$name}`, `{$type}` and `{$loader}` are available.
+`{$vendor}`, `{$name}` and `{$type}` variables are available.
+
+In addition, `{$loader}` variable is available, which is the relative path
+to the loader file.
