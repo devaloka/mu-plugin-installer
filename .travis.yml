@@ -23,7 +23,6 @@ cache:
 before_install:
   - npm config set spin false
   - npm install -g npm
-  - phpenv config-rm xdebug.ini
   - composer self-update
 
 install:
