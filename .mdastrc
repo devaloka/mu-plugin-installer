@@ -10,7 +10,7 @@
         "yaml"      : false
     },
     "plugins" : {
-        "mdast-lint": {
+        "remark-lint": {
             "externals"                        : [],
             "reset"                            : false,
             "blockquote-indentation"           : "consistent",
