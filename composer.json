@@ -57,7 +57,7 @@
             ".editorconfig",
             "package.json",
             "npm-shrinkwrap.json",
-            ".mdastrc",
+            ".remarkrc",
             "composer.json",
             "phpunit.xml.dist",
             ".coveralls.yml",
