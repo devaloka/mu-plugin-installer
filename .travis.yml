@@ -31,7 +31,7 @@ install:
 
 script:
   - npm run-script lint-travis
-  - phpunit --colors --verbose --coverage-clover build/logs/clover.xml
+  - composer test-travis
 
 after_script:
   - vendor/bin/coveralls --verbose

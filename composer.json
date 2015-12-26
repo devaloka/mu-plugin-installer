@@ -49,6 +49,14 @@
             "Tests\\Devaloka\\Composer\\": "tests/"
         }
     },
+    "scripts"          : {
+        "test"       : [
+            "php vendor/phpunit/phpunit/phpunit --colors=always"
+        ],
+        "test-travis": [
+            "php vendor/phpunit/phpunit/phpunit --colors=always --verbose --coverage-clover build/logs/clover.xml"
+        ]
+    },
     "archive"          : {
         "exclude": [
             ".gitignore",
