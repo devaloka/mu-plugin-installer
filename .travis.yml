@@ -34,7 +34,7 @@ script:
   - composer test-travis
 
 after_script:
-  - vendor/bin/coveralls --verbose
+  - php vendor/bin/coveralls --verbose
 
 notifications:
   email:
