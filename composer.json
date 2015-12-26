@@ -34,10 +34,11 @@
         "composer-plugin-api": "~1.0.0"
     },
     "require-dev"      : {
-        "composer/composer"     : "1.0.*@dev",
-        "phpunit/phpunit"       : "^4.8 || ^5.1",
-        "mockery/mockery"       : "^0.9.4",
-        "satooshi/php-coveralls": "~0.7.1"
+        "composer/composer"        : "1.0.*@dev",
+        "squizlabs/php_codesniffer": "^2.5.0",
+        "phpunit/phpunit"          : "^4.8 || ^5.1",
+        "mockery/mockery"          : "^0.9.4",
+        "satooshi/php-coveralls"   : "~0.7.1"
     },
     "autoload"         : {
         "psr-4": {
@@ -51,9 +52,11 @@
     },
     "scripts"          : {
         "test"       : [
+            "php vendor/squizlabs/php_codesniffer/scripts/phpcs --colors",
             "php vendor/phpunit/phpunit/phpunit --colors=always"
         ],
         "test-travis": [
+            "php vendor/squizlabs/php_codesniffer/scripts/phpcs --colors",
             "php vendor/phpunit/phpunit/phpunit --colors=always --verbose --coverage-clover build/logs/clover.xml"
         ]
     },
@@ -67,6 +70,7 @@
             "npm-shrinkwrap.json",
             ".remarkrc",
             "composer.json",
+            "phpcs.xml",
             "phpunit.xml.dist",
             ".coveralls.yml",
             "tests/",

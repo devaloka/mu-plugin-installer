@@ -8,6 +8,7 @@ package.json export-ignore
 npm-shrinkwrap.json export-ignore
 .remarkrc export-ignore
 composer.json export-ignore
+phpcs.xml export-ignore
 phpunit.xml.dist export-ignore
 .coveralls.yml export-ignore
 tests/ export-ignore
