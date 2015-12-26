@@ -73,7 +73,7 @@ class MuPluginInstallerTest extends InstallerTestCase
     /**
      * @return mixed[]
      */
-    public function LoaderDefaultInstallPathDataProvider()
+    public function loaderDefaultInstallPathDataProvider()
     {
         return array(
             array('package', 'wp-content/mu-plugins/'),
@@ -353,7 +353,7 @@ class MuPluginInstallerTest extends InstallerTestCase
     /**
      * @return mixed[]
      */
-    public function LoaderCustomInstallPathDataProvider()
+    public function loaderCustomInstallPathDataProvider()
     {
         return array(
             array(
@@ -384,7 +384,7 @@ class MuPluginInstallerTest extends InstallerTestCase
     }
 
     /**
-     * @dataProvider LoaderCustomInstallPathDataProvider
+     * @dataProvider loaderCustomInstallPathDataProvider
      *
      * @param string $name
      * @param string $path
