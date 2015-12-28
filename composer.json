@@ -69,6 +69,7 @@
             "package.json",
             "npm-shrinkwrap.json",
             ".remarkrc",
+            "gulpfile.js",
             "composer.json",
             "phpcs.xml",
             "phpunit.xml.dist",

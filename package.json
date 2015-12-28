@@ -32,7 +32,11 @@
         "lint-travis": "remark -f -u remark-lint README.md"
     },
     "devDependencies": {
-        "remark"     : "^3.0.0",
-        "remark-lint": "^2.0.0"
+        "gulp"        : "^3.9.0",
+        "gulp-filter" : "^3.0.1",
+        "gulp-replace": "^0.5.4",
+        "remark"      : "^3.0.0",
+        "remark-lint" : "^2.0.0",
+        "semver"      : "^5.1.0"
     }
 }
