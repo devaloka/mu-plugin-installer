@@ -32,7 +32,7 @@
         "lint-travis": "remark -f -u remark-lint README.md"
     },
     "devDependencies": {
-        "remark"     : "~3.0.0",
-        "remark-lint": "~2.0.0"
+        "remark"     : "^3.0.0",
+        "remark-lint": "^2.0.0"
     }
 }
