@@ -11,7 +11,7 @@
     ],
     "homepage"       : "https://github.com/devaloka/mu-plugin-installer",
     "bugs"           : {
-        "url": "https://github.com/devaloka/mu-plugin-installer/isssues"
+        "url": "https://github.com/devaloka/mu-plugin-installer/issues"
     },
     "license"        : "MIT",
     "author"         : {
