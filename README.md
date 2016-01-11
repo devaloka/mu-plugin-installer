@@ -1,7 +1,8 @@
 # A Composer Installer for WordPress MU Plugins
 
-[![Build Status](https://travis-ci.org/devaloka/mu-plugin-installer.svg?branch=master)](https://travis-ci.org/devaloka/mu-plugin-installer) [![Packagist](https://img.shields.io/packagist/v/devaloka/mu-plugin-installer.svg)](https://packagist.org/packages/devaloka/mu-plugin-installer)
-
+[![Build Status][travis-image]][travis-url]
+[![Packagist][packagist-image]][packagist-url]
+ 
 This is a Composer Installer for WordPress MU Plugins.
 
 The Installer is basically based on/compatible with [A Multi-Framework Composer Library Installer](https://github.com/composer/installers)
@@ -114,3 +115,9 @@ With a `type:` prefix:
 
 In addition, `{$loader}` variable is available, which is the relative path
 to the loader file.
+
+[travis-image]: https://travis-ci.org/devaloka/mu-plugin-installer.svg?branch=master
+[travis-url]: https://travis-ci.org/devaloka/mu-plugin-installer
+
+[packagist-image]: https://img.shields.io/packagist/v/devaloka/mu-plugin-installer.svg
+[packagist-url]: https://packagist.org/packages/devaloka/mu-plugin-installer
