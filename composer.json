@@ -52,12 +52,12 @@
     },
     "scripts"          : {
         "test"       : [
-            "php vendor/squizlabs/php_codesniffer/scripts/phpcs --colors",
-            "php vendor/phpunit/phpunit/phpunit --colors=always"
+            "vendor/bin/phpcs --colors",
+            "vendor/bin/phpunit --colors=always"
         ],
         "test-travis": [
-            "php vendor/squizlabs/php_codesniffer/scripts/phpcs --colors",
-            "php vendor/phpunit/phpunit/phpunit --colors=always --verbose --coverage-clover build/logs/clover.xml"
+            "vendor/bin/phpcs --colors",
+            "vendor/bin/phpunit --colors=always --verbose --coverage-clover build/logs/clover.xml"
         ]
     },
     "archive"          : {
