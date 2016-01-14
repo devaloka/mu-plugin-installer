@@ -15,6 +15,7 @@
         "MIT"
     ],
     "minimum-stability": "dev",
+    "prefer-stable"    : true,
     "authors"          : [
         {
             "name"    : "Whizark",
