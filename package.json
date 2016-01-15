@@ -1,28 +1,5 @@
 {
-    "name"           : "mu-plugin-installer",
     "version"        : "0.1.2",
-    "description"    : "A Composer Installer for WordPress MU plugins",
-    "keywords"       : [
-        "wordpress",
-        "plugin",
-        "mu-plugin",
-        "composer",
-        "installer"
-    ],
-    "homepage"       : "https://github.com/devaloka/mu-plugin-installer",
-    "bugs"           : {
-        "url": "https://github.com/devaloka/mu-plugin-installer/issues"
-    },
-    "license"        : "MIT",
-    "author"         : {
-        "name" : "Whizark",
-        "email": "devaloka@whizark.com",
-        "url"  : "http://whizark.com"
-    },
-    "files"          : [
-        "./LICENSE",
-        "./src/*"
-    ],
     "repository"     : {
         "type": "git",
         "url" : "https://github.com/devaloka/mu-plugin-installer.git"
@@ -38,5 +15,6 @@
         "remark"      : "^3.2.0",
         "remark-lint" : "^2.1.0",
         "semver"      : "^5.1.0"
-    }
+    },
+    "private"        : true
 }
