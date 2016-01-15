@@ -1,7 +1,9 @@
 # A Composer Installer for WordPress MU Plugins
 
+[![Latest Stable Version][stable-image]][stable-url]
+[![Latest Unstable Version][unstable-image]][unstable-url]
+[![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
-[![Packagist][packagist-image]][packagist-url]
  
 This is a Composer Installer for WordPress MU Plugins.
 
@@ -116,8 +118,14 @@ With a `type:` prefix:
 In addition, `{$loader}` variable is available, which is the relative path
 to the loader file.
 
+[stable-image]: https://poser.pugx.org/devaloka/mu-plugin-installer/v/stable
+[stable-url]: https://packagist.org/packages/devaloka/mu-plugin-installer
+
+[unstable-image]: https://poser.pugx.org/devaloka/mu-plugin-installer/v/unstable
+[unstable-url]: https://packagist.org/packages/devaloka/mu-plugin-installer
+
+[license-image]: https://poser.pugx.org/devaloka/mu-plugin-installer/license
+[license-url]: https://packagist.org/packages/devaloka/mu-plugin-installer
+
 [travis-image]: https://travis-ci.org/devaloka/mu-plugin-installer.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/mu-plugin-installer
-
-[packagist-image]: https://img.shields.io/packagist/v/devaloka/mu-plugin-installer.svg
-[packagist-url]: https://packagist.org/packages/devaloka/mu-plugin-installer
