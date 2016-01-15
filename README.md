@@ -4,6 +4,7 @@
 [![Latest Unstable Version][unstable-image]][unstable-url]
 [![License][license-image]][license-url]
 [![Build Status][travis-image]][travis-url]
+[![Coverage Status][coveralls-image]][coveralls-url]
  
 This is a Composer Installer for WordPress MU Plugins.
 
@@ -129,3 +130,6 @@ to the loader file.
 
 [travis-image]: https://travis-ci.org/devaloka/mu-plugin-installer.svg?branch=master
 [travis-url]: https://travis-ci.org/devaloka/mu-plugin-installer
+
+[coveralls-image]: https://coveralls.io/repos/devaloka/mu-plugin-installer/badge.svg?branch=master&service=github
+[coveralls-url]: https://coveralls.io/github/devaloka/mu-plugin-installer?branch=master
