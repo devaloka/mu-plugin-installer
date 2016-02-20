@@ -37,7 +37,7 @@ script:
     - npm run-script lint-travis
     - composer test-travis
 
-after_script:
+after_success:
     - vendor/bin/coveralls --verbose
 
 notifications:
