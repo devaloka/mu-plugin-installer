@@ -1,3 +1,11 @@
+<a name="0.2.0"></a>
+# [0.2.0](https://github.com/devaloka/mu-plugin-installer/compare/v0.1.2...v0.2.0) (2016-06-07)
+
+
+* update Composer and the API to 1.1.* ([f29dab5](https://github.com/devaloka/mu-plugin-installer/commit/f29dab5))
+
+
+
 <a name="0.1.2"></a>
 ## [0.1.2](https://github.com/devaloka/mu-plugin-installer/compare/v0.1.1...v0.1.2) (2015-12-20)
 
