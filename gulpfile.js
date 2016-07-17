@@ -16,7 +16,7 @@ const pkg     = require('./package.json');
  */
 function bumpTaskFactory(type) {
     return () => {
-        const packages       = ['composer.json', 'package.json'];
+        const packages       = ['package.json'];
         const version        = pkg.version;
         const newVersion     = semver.inc(version, type);
         const versionPattern = (version + '').replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
