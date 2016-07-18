@@ -60,7 +60,7 @@ will be installed as:
     "name": "you/your-plugin-name",
     "type": "devaloka-muplugin",
     "require": {
-        "devaloka/mu-plugin-installer": "~0.1.0"
+        "devaloka/mu-plugin-installer": "~0.2.0"
     }
 }
 ```
