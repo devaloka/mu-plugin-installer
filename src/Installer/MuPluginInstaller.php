@@ -13,6 +13,7 @@ namespace Devaloka\Composer\Installer;
 use Composer\Installer\LibraryInstaller;
 use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
+use React\Promise\PromiseInterface;
 
 /**
  * Class MuPluginInstaller
@@ -238,9 +239,21 @@ class MuPluginInstaller extends LibraryInstaller
      */
     protected function installCode(PackageInterface $package)
     {
-        parent::installCode($package);
+        $muPluginInstaller = $this;
 
-        $this->installLoader($package);
+        $installLoader = function () use ($muPluginInstaller, $package) {
+            $muPluginInstaller->installLoader($package);
+        };
+
+        $promise = parent::installCode($package);
+
+        // Composer v2 might return a promise here
+        if ($promise instanceof PromiseInterface) {
+            return $promise->then($installLoader);
+        }
+
+        // If not, execute the code right away as parent::uninstall executed synchronously (composer v1, or v2 without async)
+        $installLoader();
     }
 
     /**
@@ -261,9 +274,21 @@ class MuPluginInstaller extends LibraryInstaller
      */
     protected function removeCode(PackageInterface $package)
     {
-        parent::removeCode($package);
+        $muPluginInstaller = $this;
 
-        $this->removeLoader($package);
+        $removeLoader = function () use ($muPluginInstaller, $package) {
+            $muPluginInstaller->removeLoader($package);
+        };
+
+        $promise = parent::removeCode($package);
+
+        // Composer v2 might return a promise here
+        if ($promise instanceof PromiseInterface) {
+            return $promise->then($removeLoader);
+        }
+
+        // If not, execute the code right away as parent::uninstall executed synchronously (composer v1, or v2 without async)
+        $removeLoader();
     }
 
     /**

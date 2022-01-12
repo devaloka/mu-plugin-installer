@@ -21,13 +21,23 @@ use Composer\Plugin\PluginInterface;
  */
 class MuPluginInstallerPlugin implements PluginInterface
 {
+    private $installer;
+
     /**
      * {@inheritDoc}
      */
     public function activate(Composer $composer, IOInterface $io)
     {
-        $installer = new MuPluginInstaller($io, $composer);
+        $this->installer = new MuPluginInstaller($io, $composer);
+        $composer->getInstallationManager()->addInstaller($this->installer);
+    }
 
-        $composer->getInstallationManager()->addInstaller($installer);
+    public function deactivate(Composer $composer, IOInterface $io)
+    {
+        $composer->getInstallationManager()->removeInstaller($this->installer);
+    }
+
+    public function uninstall(Composer $composer, IOInterface $io)
+    {
     }
 }
